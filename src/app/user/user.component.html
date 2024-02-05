@@ -1,0 +1,19 @@
+<h1>user works!</h1>
+<section>
+    @if (log) {
+        <img 
+        (click)="saludar()"
+        alt="photo" 
+        src="https://github.com/juanpedrobernal.png">
+        <p>Bienvenido, {{ username }}</p>
+        <app-games nombreUsu={{username}} (comunicadorEventHijoPadre)="getFavorito($event)"></app-games>
+        @if (favGame != '') {
+            <p>El juego favorito de {{username}} es: {{favGame}}</p>
+        }
+        
+    } @else {
+        <p>¡Inicia sesión!</p>
+        <button (click)="cambiarEstado()">Iniciar sesión</button>
+    }
+    
+</section>
